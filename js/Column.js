@@ -7,11 +7,11 @@ function Column(id, name) {
 
     function createColumn() {
         // TWORZENIE NOWYCH WĘZŁÓW
-        var column = $('<div class="column"></div>');
+        var column = $('<div class="column col-md-4 col-lg-4 my-column-style"></div>');
         var columnTitle = $('<h2 class="column-title">' + self.name + '</h2>');
         var columnCardList = $('<ul class="card-list"></ul>');
-        var columnDelete = $('<button class="btn-delete">x</button>');
-        var columnAddCard = $('<button class="column-add-card">Dodaj kartę</button>');
+        var columnDelete = $('<button class="btn btn-danger">x</button>');
+        var columnAddCard = $('<button class="add-card btn btn-success">Dodaj kartę</button>');
 
         // PODPINANIE ODPOWIEDNICH ZDARZEŃ POD WĘZŁY
         columnDelete.click(function() {
@@ -47,6 +47,7 @@ function Column(id, name) {
 Column.prototype = {
     createCard: function(card) {
         this.element.children('ul').append(card.element);
+
     },
     deleteColumn: function() {
         var self = this;
